@@ -18,18 +18,6 @@ public class CurrencyData {
         this.conversion_rate = conversion_rate;
     }
 
-    public String getBase_code() {
-        return base_code;
-    }
-
-    public String getTarget_code() {
-        return target_code;
-    }
-
-    public Double getConversion_rate() {
-        return conversion_rate;
-    }
-
     public void setCantidad(Double cantidad) {
         this.cantidad = cantidad;
     }
@@ -40,8 +28,7 @@ public class CurrencyData {
         DecimalFormat df = new DecimalFormat("#.##");
 
         // Formatear el número
-        String formattedNumber = df.format(cantidad * this.conversion_rate);
-        formateddDouble= formattedNumber;
+        formateddDouble= df.format(cantidad * this.conversion_rate);
     }
 
     private String getFullName(String code) {
@@ -56,7 +43,7 @@ public class CurrencyData {
     @Override
 
     public String toString() {
-        String baseFullName = getFullName(base_code);
+
         String targetFullName = getFullName(target_code);
         return String.format("| %-17s | %-17s | %-22s | %-16s | %-22s |",
                 base_code,

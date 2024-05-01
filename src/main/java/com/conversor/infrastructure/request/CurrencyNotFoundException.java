@@ -1,4 +1,4 @@
-package com.conversor.infrastructure;
+package com.conversor.infrastructure.request;
 
 public class CurrencyNotFoundException extends RuntimeException {
 

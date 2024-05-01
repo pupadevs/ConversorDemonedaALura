@@ -11,8 +11,7 @@ public class ToJson {
     public static CurrencyData toJson(HttpResponse<String> response){
         Gson gson = new GsonBuilder().create();
 
-        CurrencyData conversion = gson.fromJson(response.body(), CurrencyData.class);
-       return conversion;
+       return gson.fromJson(response.body(), CurrencyData.class);
 
     }
 }

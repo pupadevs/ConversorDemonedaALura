@@ -6,7 +6,7 @@ public class Table {
 
     public static void tablero(CurrencyData currencyData) {
         System.out.println("+-------------------+-------------------+------------------------+------------------+------------------------+");
-        System.out.println("|    Base Code      |    Target Code    |    Conversion Rate     |     Cantidad     |    Target Full Name    |");
+        System.out.println("|    Base Code      |    Target Code    |    converter Rate     |     Cantidad     |    Target Full Name    |");
         System.out.println("+-------------------+-------------------+------------------------+------------------+------------------------+");
         System.out.println(currencyData.toString());
         System.out.println("+-------------------+-------------------+------------------------+------------------+------------------------+");

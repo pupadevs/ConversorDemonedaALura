@@ -21,7 +21,7 @@ public class ValidInput {
     }
 
     public static Double validCantidad(Scanner input, String mensaje) {
-        Double cantidad = 0d;
+        double cantidad = 0d;
         do {
             try {
                 System.out.println(mensaje);

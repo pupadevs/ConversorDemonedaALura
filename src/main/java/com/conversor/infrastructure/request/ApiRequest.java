@@ -1,18 +1,15 @@
 package com.conversor.infrastructure.request;
 
-import com.conversor.infrastructure.CurrencyNotFoundException;
-
 import java.io.IOException;
 import java.net.URI;
-import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.nio.charset.StandardCharsets;
+
 
 public class ApiRequest {
 
-    public static HttpResponse<String> makeRequest(String baseCode, String targetCode){
+    public static HttpResponse<String> makeRequest(String baseCode, String targetCode) throws IOException, InterruptedException {
         // Crear un cliente HTTP
         HttpClient client = HttpClient.newHttpClient();
         // Construir la URL con los parámetros proporcionados
@@ -28,11 +25,8 @@ public class ApiRequest {
 
         // Enviar la solicitud y recibir la respuesta
         HttpResponse<String> response;
-        try {
+
             response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        } catch (IOException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
 
 
         client.close();
