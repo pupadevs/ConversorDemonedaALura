@@ -7,15 +7,13 @@ import com.conversor.infrastructure.principal.ConversionInterface;
 import java.net.http.HttpResponse;
 import java.text.DecimalFormat;
 
-public class ConvertirDeDollarADop implements ConversionInterface {
-    private final String baseCode ="USD";
-    private final String targetCode ="DOP";
+public class CurrencyConverter implements ConversionInterface {
 
 
     @Override
-    public String Conversion(double cantidad) {
+    public String Conversion(double cantidad,String baseCode, String targetCode) {
 
-        double resultado = cantidad * callToApi().getConversion_rate();;
+        double resultado =  callToApi(baseCode, targetCode).currencyConverter(cantidad);;
         DecimalFormat df = new DecimalFormat("#.##");
 
         // Formatear el número
@@ -24,9 +22,9 @@ public class ConvertirDeDollarADop implements ConversionInterface {
     }
 
     @Override
-    public ConversionData callToApi() {
+    public ConversionData callToApi(String baseCode, String targetCode) {
 
-        HttpResponse<String> response = ApiRequest.makeRequest(this.baseCode, this.targetCode);
+        HttpResponse<String> response = ApiRequest.makeRequest(baseCode, targetCode);
         ConversionData data = ConvertirAJson.toJson(response);
 
         return data;

@@ -6,9 +6,9 @@ import java.net.http.HttpResponse;
 
 public interface ConversionInterface {
 
-    String Conversion(double cantidad);
+    String Conversion(double cantidad,String baseCode, String targetCode);
 
 
 
-    ConversionData callToApi();
+    ConversionData callToApi(String baseCode, String targetCode);
 }

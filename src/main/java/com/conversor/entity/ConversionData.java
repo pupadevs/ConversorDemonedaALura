@@ -24,6 +24,10 @@ public class ConversionData {
         return conversion_rate;
     }
 
+    public Double currencyConverter(Double cantidad){
+        return cantidad * this.conversion_rate;
+    }
+
     public String toString() {
 
         return null;
