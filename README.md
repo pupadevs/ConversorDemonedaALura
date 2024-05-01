@@ -73,7 +73,7 @@ Siéntete libre de contribuir al proyecto abriendo un problema o enviando una so
 ## Clonar el Repositorio
 
 Puedes clonar el repositorio desde Git utilizando el siguiente comando:
-git clone https://url-del-repositorio.git
+git clone https://github.com/pupadevs/ConversorDemonedaALura
 
 
 
