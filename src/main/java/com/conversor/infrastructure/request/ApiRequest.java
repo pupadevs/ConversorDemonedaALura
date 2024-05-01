@@ -1,4 +1,6 @@
-package com.conversor.infrastructure;
+package com.conversor.infrastructure.request;
+
+import com.conversor.infrastructure.CurrencyNotFoundException;
 
 import java.io.IOException;
 import java.net.URI;
@@ -35,11 +37,12 @@ public class ApiRequest {
 
         client.close();
         /* Lanzo exception */
-     /*   if (response.statusCode() == 404) {
+        if (response.statusCode() == 400) {
+            throw new CurrencyNotFoundException();
         }
-        if (response.statusCode() == 403) {
-
-        }*/
+        if (response.statusCode() == 404) {
+            throw new CurrencyNotFoundException();
+        }
 
         return response;
     }
